@@ -1,0 +1,3 @@
+[submodule "pages-file-based-routing/nextjs-course-code"]
+	path = pages-file-based-routing/nextjs-course-code
+	url = https://github.com/mschwarzmueller/nextjs-course-code.git
