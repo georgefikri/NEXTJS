@@ -1,1 +1,0 @@
-//optimizing next.js app
