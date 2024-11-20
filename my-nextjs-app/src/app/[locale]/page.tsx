@@ -2,7 +2,7 @@
 export default async function LocalePage({ params }: { params: { locale: string } }) {
   const { locale } = params;
 
-  const messages = require(`@/locales/${locale}.json`);
+  const messages = (await import(`@/locales/${locale}.json`)).default;
 
   return (
     <main>
