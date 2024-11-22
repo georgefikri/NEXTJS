@@ -22,8 +22,6 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = (await import(`@/locales/${locale}.json`)).default;
-
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body>{children}</body>
