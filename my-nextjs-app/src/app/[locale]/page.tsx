@@ -1,8 +1,6 @@
-// src/app/[locale]/page.tsx
+import { loadMessages } from '@/lib/locale';
 export default async function LocalePage({ params }: { params: { locale: string } }) {
-  const { locale } = params;
-
-  const messages = (await import(`@/locales/${locale}.json`)).default;
+  const messages = await loadMessages(params.locale);
 
   return (
     <main>
