@@ -1,18 +1,28 @@
+# My Next.js Multilingual App
 
-# My Next.js App
+A simple Next.js project supporting English and Arabic languages.
 
-A multilingual web application built with Next.js, implementing robust localization support using dynamic routes and server-side translations.
+## Project Description
 
-## Project Overview
+This project demonstrates a multilingual setup in Next.js using dynamic routing and client-side logic for locale management.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. This project demonstrates how to manage locales effectively using Next.js's App Router, React Context for state management, and a custom localization utility.
+---
 
-## Key Features
+## Language Issue and Fix
 
-- Language-based routing with dynamic locale support.
-- Middleware-free locale redirection (to address version limitations).
-- Centralized state management with React Context and hooks.
-- Simplified localization using JSON files for translation storage.
+### **The Issue:**
+
+We encountered challenges with **Next.js Middleware** due to inconsistent behavior across versions:
+
+1. Middleware wasn't fully recognized in versions like `13.5.1`.
+2. Partial functionality was observed in `13.4.12`, but it wasn't reliable for locale redirection.
+
+### **Our Solution:**
+
+Instead of relying on middleware, we implemented:
+
+1. **Dynamic Routing**: Locale-based routing handled via the App Router.
+2. **Client-Side Logic**: Redirecting users to their preferred locale using `next/navigation`'s `redirect()` method.
 
 ## Localization Implementation
 
@@ -100,10 +110,13 @@ During implementation, middleware inconsistencies in Next.js versions posed chal
 Below are screenshots showcasing key snippets for localization logic:
 
 ### Locale Page Logic
+
 ![Locale Page](./middleware1.png)
 
 ### Locale Layout Logic
+
 ![Locale Layout](./middleware2.png)
 
 ### Root Layout Logic
+
 ![Root Layout](./middleware3.png)
