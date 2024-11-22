@@ -2,7 +2,6 @@
 import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 
-// This will be called server-side to determine the available locales
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ar' }];
 }
