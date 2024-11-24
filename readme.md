@@ -2,4 +2,5 @@
 
 ## Table of Contents
 
-1. <a href="https://github.com/georgefikri/nextjsProjects/tree/main/foodies-Project">Next.js 14 Foodies Project</a>
+1. <a href="https://github.com/georgefikri/nextjsProjects/tree/main/my-nextjs-app">Next.js 13 mini project</a>
+2. <a href="https://github.com/georgefikri/nextjsProjects/tree/main/foodies-Project">Next.js 14 Foodies Project</a>
