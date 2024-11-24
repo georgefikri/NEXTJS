@@ -1,10 +1,10 @@
 import Counter from '@/components/Counter';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Users from '@/components/Users';
-import { loadMessages } from '@/lib/locale';
+import { localization } from '@/consts/loadMessage';
 
 export default  function LocalePage({ params }: { params: { locale: string } }) {
-  const messages = loadMessages(params.locale);
+  const messages = localization(params.locale);
 
   return (
     <main>

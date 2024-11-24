@@ -1,6 +1,6 @@
 'use client';
 
-import { loadMessages } from '@/lib/locale';
+import { localization } from '@/consts/loadMessage';
 import { useRouter, usePathname } from 'next/navigation';
 
 export default function NotFound() {
@@ -11,8 +11,7 @@ export default function NotFound() {
   const segments = pathname.split('/');
   const currentLocale = supportedLocales.includes(segments[1]) ? segments[1] : 'en';
 
-  // Load messages synchronously
-  const messages = loadMessages(currentLocale);
+  const messages = localization(currentLocale);
 
   const redirectToHome = () => {
     router.push(`/${currentLocale}`);

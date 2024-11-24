@@ -18,7 +18,7 @@ export default async function LocaleLayout({
   const supportedLocales = ['en', 'ar'];
 
   if (!supportedLocales.includes(locale)) {
-    notFound(); // This should redirect to `not-found.tsx`
+    notFound(); 
   }
 
 
