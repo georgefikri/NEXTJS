@@ -113,18 +113,3 @@ During implementation, middleware inconsistencies in Next.js versions posed chal
 - Middleware did not reliably redirect users based on locales in versions such as `13.5.1`.
 - As a workaround, dynamic routing and client-side logic were used for locale management, ensuring consistent behavior.
 
-## Attachments
-
-Below are screenshots showcasing key snippets for localization logic:
-
-### Locale Page Logic
-
-![Locale Page](./middleware1.png)
-
-### Locale Layout Logic
-
-![Locale Layout](./middleware2.png)
-
-### Root Layout Logic
-
-![Root Layout](./middleware3.png)
