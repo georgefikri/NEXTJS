@@ -3,8 +3,8 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Users from '@/components/Users';
 import { loadMessages } from '@/lib/locale';
 
-export default async function LocalePage({ params }: { params: { locale: string } }) {
-  const messages = await loadMessages(params.locale);
+export default  function LocalePage({ params }: { params: { locale: string } }) {
+  const messages = loadMessages(params.locale);
 
   return (
     <main>

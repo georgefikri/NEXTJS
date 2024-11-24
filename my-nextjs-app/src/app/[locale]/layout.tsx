@@ -1,12 +1,9 @@
-// src/app/[locale]/layout.tsx
 import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ar' }];
 }
-
-
 
 
 export default async function LocaleLayout({

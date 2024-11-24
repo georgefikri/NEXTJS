@@ -1,12 +1,19 @@
-export const loadMessages = async (locale: string): Promise<Record<string, string>> => {
-  try {
-    const messages = (await import(`@/locales/${locale}.json`)).default;
-    return messages;
-  } catch (error) {
-    console.error(`Error loading localization messages for locale: ${locale}`, error);
-    return {
-      welcome: 'Welcome (Fallback)',
-      description: 'This is a fallback description.',
-    }; // Fallback messages
+
+import enMessages from '@/locales/en.json';
+import arMessages from '@/locales/ar.json';
+
+const localizationMessages: Record<string, Record<string, string>> = {
+  en: enMessages,
+  ar: arMessages,
+};
+
+export const loadMessages = (locale: string): Record<string, string> => {
+  if (localizationMessages[locale]) {
+    return localizationMessages[locale];
   }
+  console.error(`Localization for locale "${locale}" not found.`);
+  return {
+    welcome: 'Welcome (Fallback)',
+    description: 'This is a fallback description.',
+  };
 };
