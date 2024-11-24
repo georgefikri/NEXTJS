@@ -6,6 +6,9 @@ export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ar' }];
 }
 
+
+
+
 export default async function LocaleLayout({
   children,
   params,
@@ -18,9 +21,11 @@ export default async function LocaleLayout({
   const supportedLocales = ['en', 'ar'];
 
   if (!supportedLocales.includes(locale)) {
-    notFound();
+    notFound(); // This should redirect to `not-found.tsx`
   }
 
+
+  
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body>{children}</body>
