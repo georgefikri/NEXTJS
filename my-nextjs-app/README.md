@@ -13,6 +13,7 @@ This project demonstrates a multilingual setup in Next.js using dynamic routing 
 2. **Client-Side Logic**: Redirecting users to their preferred locale using `next/navigation`'s `redirect()` method.
 3. **Localization Implementation**: Locale-based content rendering using JSON files.
 4. **Middleware Issue Fix**: Addressing inconsistencies with Next.js Middleware across versions.
+5. **Tailwind CSS**: Styling components using Tailwind CSS.
 
 
 
