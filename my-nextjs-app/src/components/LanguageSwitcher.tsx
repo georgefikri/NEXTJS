@@ -2,6 +2,8 @@
 
 import { useRouter, usePathname } from 'next/navigation';
 
+
+
 export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
@@ -17,18 +19,22 @@ export default function LanguageSwitcher() {
 
   return (
     <div>
-      <button
-        onClick={() => changeLanguage('en')}
-        style={{ fontWeight: currentLocale === 'en' ? 'bold' : 'normal' }}
-      >
-        English
-      </button>
-      <button
-        onClick={() => changeLanguage('ar')}
-        style={{ fontWeight: currentLocale === 'ar' ? 'bold' : 'normal' }}
-      >
-        العربية
-      </button>
+      {
+      currentLocale === 'en' ? (
+        <button
+          onClick={() => changeLanguage('ar')}
+        >
+          العربية
+        </button>
+      ) : (
+        <button
+          onClick={() => changeLanguage('en')}
+        >
+          English
+        </button>
+      )
+      }
+
     </div>
   );
 }
