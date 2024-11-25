@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-
+import './globals.css'
 import GlobalProvider from '@/store/GlobalProvider';
 
 export const metadata = {
@@ -15,8 +15,8 @@ export default function RootLayout({
   params: { locale: string };
 }) {
   return (
-    <html lang={params.locale || 'en'}>
-      <body>
+    <html lang={params.locale || 'en'} dir={params.locale === 'ar' ? 'rtl' : 'ltr'}>
+      <body >
         <header></header>
         <GlobalProvider>{children}</GlobalProvider>
       </body>
