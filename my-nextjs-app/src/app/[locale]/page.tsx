@@ -11,7 +11,7 @@ export default  function LocalePage({ params }: { params: { locale: string } }) 
     <main>
        <header className="bg-blue-500 text-white p-4 flex">
         <div className="container mx-auto flex">
-          <h1 className="text-3xl font-bold">My Website</h1>
+          <h1 className="text-3xl font-bold">{messages['myWebsite']}</h1>
           <div className={`flex items-center ${isRTL ? 'mr-auto' : 'ml-auto'}`}>
 
           <LanguageSwitcher />
@@ -19,9 +19,6 @@ export default  function LocalePage({ params }: { params: { locale: string } }) 
           </div>
         </div>
       </header>
-
-      <h1>{messages['welcome']}</h1>
-      <p>{messages['description']}</p>
 
       <Counter />
       <Users />

@@ -3,5 +3,6 @@
   "description": "هذا هو الوصف.",
   "notFoundTitle": "الصفحة غير موجودة",
   "notFoundDescription": "عذرًا، الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
-  "goToHomepage": "العودة إلى الصفحة الرئيسية"
+  "goToHomepage": "العودة إلى الصفحة الرئيسية",
+  "myWebsite": "موقعي"
 }
