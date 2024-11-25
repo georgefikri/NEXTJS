@@ -1,6 +1,6 @@
-import Counter from '@/components/Counter';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-import Users from '@/components/Users';
+import Counter from '@/components/Counter/Counter';
+import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher';
+import Users from '@/components/Users/Users';
 import { localization } from '@/consts/loadMessage';
 
 export default  function LocalePage({ params }: { params: { locale: string } }) {

@@ -4,5 +4,6 @@
   "notFoundTitle": "الصفحة غير موجودة",
   "notFoundDescription": "عذرًا، الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
   "goToHomepage": "العودة إلى الصفحة الرئيسية",
-  "myWebsite": "موقعي"
+  "myWebsite": "موقعي",
+  "errorLoadingPosts": "حدث خطأ أثناء تحميل المقالات."
 }
