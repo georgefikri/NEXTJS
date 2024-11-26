@@ -5,5 +5,8 @@
   "notFoundDescription": "عذرًا، الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
   "goToHomepage": "العودة إلى الصفحة الرئيسية",
   "myWebsite": "موقعي",
-  "errorLoadingPosts": "حدث خطأ أثناء تحميل المقالات."
+  "errorLoadingPosts": "حدث خطأ أثناء تحميل المقالات.",
+  "errorLoadingPost": "خطأ في تحميل تفاصيل المنشور",
+  "postNotFound": "المنشور غير موجود",
+  "backToPosts": "العودة إلى المنشورات"
 }

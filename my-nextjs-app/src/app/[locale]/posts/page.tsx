@@ -6,7 +6,6 @@ import { localization } from "@/consts/loadMessage";
 export default async function PostsPage({params}: {params: {locale: string}}) {
     const messages = localization(params.locale);
     let allPosts
-
     try {
         allPosts = await getPosts();
 
@@ -21,5 +20,5 @@ export default async function PostsPage({params}: {params: {locale: string}}) {
 
 
 
-    return <PostsListing posts={allPosts.data as Post[]} />;
+    return <PostsListing posts={allPosts.data as Post[]} locale={params.locale}  />;
 }
