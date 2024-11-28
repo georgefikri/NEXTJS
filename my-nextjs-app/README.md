@@ -9,13 +9,13 @@ This project demonstrates a multilingual setup in Next.js using dynamic routing 
 ---
 
 ## Key Features
+
 1. **Dynamic Routing**: Locale-based routing handled via the App Router.
 2. **Client-Side Logic**: Redirecting users to their preferred locale using `next/navigation`'s `redirect()` method.
 3. **Localization Implementation**: Locale-based content rendering using JSON files.
 4. **Middleware Issue Fix**: Addressing inconsistencies with Next.js Middleware across versions.
 5. **Tailwind CSS**: Styling components using Tailwind CSS.
-
-
+6. **Reusable Components**: Added a sharedComponents directory for reusable components (src/sharedComponents) such as Button.
 
 ## Language Issue and Fix
 
@@ -113,4 +113,3 @@ During implementation, middleware inconsistencies in Next.js versions posed chal
 
 - Middleware did not reliably redirect users based on locales in versions such as `13.5.1`.
 - As a workaround, dynamic routing and client-side logic were used for locale management, ensuring consistent behavior.
-

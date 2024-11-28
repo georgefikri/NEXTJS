@@ -3,7 +3,7 @@ import Users from '@/components/Users/Users';
 
 export default function LocalePage() {
   return (
-    <main>
+    <main className="container mx-auto flex flex-col">
       <Counter />
       <Users />
     </main>

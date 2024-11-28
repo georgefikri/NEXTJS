@@ -8,9 +8,8 @@ const Header = ({ locale }: { locale: string }) => {
   const isRTL = locale === 'ar';
 
   return (
-    <header className="bg-blue-500 text-white p-4 flex">
+    <header className="bg-blue-500 text-white p-4 flex mb-4">
       <div className="container mx-auto flex items-center">
-        {/* Adjust alignment based on locale */}
         <h1 className={`text-3xl font-bold ${isRTL ? 'ml-auto' : 'mr-auto'}`}>
           {messages['myWebsite'] || 'My Website'}
         </h1>

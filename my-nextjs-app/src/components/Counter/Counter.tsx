@@ -1,4 +1,5 @@
 'use client';
+import Button from '@/sharedComponents/Button';
 import { useCount, useCounterActions } from '@/store/hooks/useAppHooks';
 
 function Counter() {
@@ -6,10 +7,18 @@ function Counter() {
   const { increment, decrement } = useCounterActions();
 
   return (
-    <div>
+    <div className="flex flex-col mb-6">
       <h1>Counter: {count}</h1>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
+      <div>this is for random content</div>
+
+      <div className="flex gap-2">
+        <Button variant="primary" size="medium" onClick={increment} className="shadow">
+          Increment
+        </Button>
+        <Button variant="danger" size="medium" onClick={decrement} className="shadow">
+          Decrement
+        </Button>
+      </div>
     </div>
   );
 }
