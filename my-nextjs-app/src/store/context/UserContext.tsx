@@ -4,20 +4,25 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface UserState {
   user: string | null;
-  login: (name: string) => void;
-  logout: () => void;
+  setUser: (name: string) => void;
+  clearUser: () => void;
 }
 
 const UserContext = createContext<UserState | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<string | null>(null);
+  const [user, setUserState] = useState<string | null>(null);
 
-  const login = (name: string) => setUser(name);
-  const logout = () => setUser(null);
+  const setUser = (name: string) => {
+    setUserState(name);
+  };
+
+  const clearUser = () => {
+    setUserState(null);
+  };
 
   return (
-    <UserContext.Provider value={{ user, login, logout }}>
+    <UserContext.Provider value={{ user, setUser, clearUser }}>
       {children}
     </UserContext.Provider>
   );

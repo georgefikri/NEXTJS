@@ -1,11 +1,13 @@
 import Counter from '@/components/Counter/Counter';
-import Users from '@/components/Users/Users';
+
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'ar' }];
+}
 
 export default function LocalePage() {
   return (
-    <main className="container mx-auto flex flex-col">
+    <main>
       <Counter />
-      <Users />
     </main>
   );
 }

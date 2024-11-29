@@ -9,6 +9,6 @@ export const useUser = () => {
 
 // hook to get login and logout actions
 export const useUserActions = () => {
-  const { login, logout } = useUserContext();
-  return { login, logout };
+  const { setUser, clearUser } = useUserContext();
+  return { setUser, clearUser };
 };

@@ -16,6 +16,8 @@ This project demonstrates a multilingual setup in Next.js using dynamic routing 
 4. **Middleware Issue Fix**: Addressing inconsistencies with Next.js Middleware across versions.
 5. **Tailwind CSS**: Styling components using Tailwind CSS.
 6. **Reusable Components**: Added a sharedComponents directory for reusable components (src/sharedComponents) such as Button.
+7. **Authentication** : Login/logout functionality with protected routes to secure pages.
+8. **Environment-Based User Management**: Credentials are stored securely in environment variables (.env.local).
 
 ## Language Issue and Fix
 
@@ -113,3 +115,89 @@ During implementation, middleware inconsistencies in Next.js versions posed chal
 
 - Middleware did not reliably redirect users based on locales in versions such as `13.5.1`.
 - As a workaround, dynamic routing and client-side logic were used for locale management, ensuring consistent behavior.
+
+## Authentication
+
+### Login Functionality
+
+We implemented a login system where:
+
+1. **Users enter credentials** on a login page.
+2. **Authentication logic validates** the credentials against a list stored in environment variables.
+3. **Authenticated users** are given access to protected pages.
+
+### Protected Routes
+
+- Routes are protected using a ProtectedRoute component that:
+- Checks the authentication state (via a UserContext).
+- Redirects unauthenticated users to the login page.
+
+### Logout Functionality
+
+- A Logout button was added to the header.
+- Clicking the button: ( Invalidates the session by clearing the token , Redirects the user back to the login page)
+
+## Environment-Based User Credentials
+
+### Environment Variable Setup
+
+- User credentials are stored in the .env.local file in the format:
+
+```tsx
+USERS=user123:password123,admin:admin123,guest:guest123
+```
+
+- Format: username:password pairs separated by commas.
+- The validateCredentials function parses this environment variable to verify users.
+
+## How Protected Routes Work
+
+1. ProtectedRoute Component:
+
+- Wraps around children components.
+- Checks the user state from UserContext.
+- Redirects unauthenticated users to the login page based on the current locale.
+
+2. Authentication Flow:
+
+- Users log in using valid credentials, which sets the user state in UserContext.
+- Logging out clears the user state and redirects the user to the login page.
+
+### ProtectedRoute Component
+
+```tsx
+'use client';
+
+import { useRouter, usePathname } from 'next/navigation';
+import { useEffect } from 'react';
+import { useUserContext } from '@/store/context/UserContext';
+
+interface ProtectedRouteProps {
+  children: React.ReactNode;
+}
+
+const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
+  const { user } = useUserContext();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!user && !pathname.endsWith('/login')) {
+      const currentLocale = pathname.split('/')[1] || 'en';
+      router.replace(`/${currentLocale}/login`);
+    }
+  }, [user, router, pathname]);
+
+  if (!user && pathname.endsWith('/login')) {
+    return <>{children}</>; // Allow login page to render
+  }
+
+  if (!user) {
+    return <p>Redirecting...</p>; // Show redirecting message
+  }
+
+  return <>{children}</>;
+};
+
+export default ProtectedRoute;
+```

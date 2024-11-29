@@ -1,25 +1,39 @@
 'use client';
 
 import Button from '@/sharedComponents/Button';
-import { useUser, useUserActions } from '@/store/hooks/useUser';
+
+import { useUserContext } from '@/store/context/UserContext';
+import { login as authLogin, logout as authLogout } from '@/services/Auth/Auth';
 
 const Users = () => {
-  const user = useUser();
-  const { login, logout } = useUserActions();
+  const { user, setUser, clearUser } = useUserContext();
+
+  const handleLogin = async () => {
+    try {
+      const isLoggedIn = await authLogin('user123', 'password123');
+      if (isLoggedIn) setUser('user123');
+    } catch {
+      console.log('error while login ');
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await authLogout();
+      clearUser();
+    } catch {
+      console.error('Logout failed');
+    }
+  };
 
   return (
     <div className="flex flex-col">
-      <h1>user name {user ? user : 'no username found'}</h1>
+      <h1>User: {user || 'No user logged in'}</h1>
       <div className="flex gap-2">
-        <Button
-          variant="primary"
-          size="medium"
-          onClick={() => login('george')}
-          className="shadow"
-        >
+        <Button variant="primary" size="medium" onClick={handleLogin} className="shadow">
           login
         </Button>
-        <Button variant="danger" size="medium" onClick={logout} className="shadow">
+        <Button variant="danger" size="medium" onClick={handleLogout} className="shadow">
           logout
         </Button>
       </div>
