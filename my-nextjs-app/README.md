@@ -141,7 +141,7 @@ We implemented a login system where:
 
 ### Environment Variable Setup
 
-- User credentials are stored in the .env.local file in the format:
+- User credentials are stored in the **.env.local** file in the format:
 
 ```tsx
 USERS=user123:password123,admin:admin123,guest:guest123
