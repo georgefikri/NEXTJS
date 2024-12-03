@@ -1,5 +1,6 @@
 'use client';
 
+import Input from '@/sharedComponents/Input';
 import React, { useState } from 'react';
 
 interface LoginFormProps {
@@ -22,31 +23,21 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, error }) => {
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-            Username
-          </label>
-          <input
-            type="text"
+          <Input
+            label="UserName"
             id="username"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-            placeholder="Enter your username"
-            required
+            placeholder="Enter your user name"
           />
         </div>
         <div>
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-            Password
-          </label>
-          <input
-            type="password"
+          <Input
+            label="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
             placeholder="Enter your password"
-            required
           />
         </div>
         <button
