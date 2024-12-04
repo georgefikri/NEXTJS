@@ -26,6 +26,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, error }) => {
           <Input
             label="UserName"
             id="username"
+            type='text'
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
             placeholder="Enter your user name"
@@ -35,6 +36,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, error }) => {
           <Input
             label="password"
             id="password"
+            type='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
