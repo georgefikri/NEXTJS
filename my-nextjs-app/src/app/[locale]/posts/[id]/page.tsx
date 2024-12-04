@@ -1,10 +1,8 @@
-import { get } from "@/services/api"
-
-import { Post } from "@/services/Posts/Posts"
 
 import { localization } from "@/consts/loadMessage"
 
 import Link from 'next/link';
+import { fetchPost } from "@/services/Posts/fetchPost";
 
 
 interface PostPageProps {
@@ -17,25 +15,12 @@ interface PostPageProps {
 export default async function PostDetailPage({params}: PostPageProps) {
     const {id, locale} = params;
     const messages = localization(locale);
-    let post: Post | null = null;
 
-    try {
-
-        const response = await get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
-
-        if (response.error) {
-            throw new Error(response.error.message);
-        }
-
-        post = response.data;
-        
-    } catch {
-        return <div>{messages['postNotFound'] ?? "Post not found"}</div>
-    }
+    const post = await fetchPost(id);
 
     if (!post) {
-        return <div>{messages['postNotFound'] ?? "Post not found"}</div>;
-    }
+        return <div>{messages["postNotFound"] ?? "Post not found"}</div>;
+      }
 
     return (
         <div className="container mx-auto p-4">

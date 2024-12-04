@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { login as authLogin } from '@/services/Auth/Auth';
 import { useUserContext } from '@/store/context/UserContext';
 import LoginForm from '@/components/LoginForm/LoginForm';
+import { loginService } from '@/services/Login/loginService';
 
 const LoginPage = () => {
   const [error, setError] = useState<string | null>(null);
@@ -12,16 +12,15 @@ const LoginPage = () => {
   const router = useRouter();
 
   const handleLogin = async (userName: string, password: string) => {
-    setError(null);
+    setError(null); // Clear previous errors
 
-    try {
-      const isLoggedIn = await authLogin(userName, password);
-      if (isLoggedIn) {
-        setUser(userName); // Set the user in context and localStorage
-        router.replace('/'); // Redirect to the home page
-      }
-    } catch {
-      setError('Login failed. Please check your credentials.');
+    const { success, error: loginError } = await loginService(userName, password);
+
+    if (success) {
+      setUser(userName); 
+      router.replace('/'); 
+    } else {
+      setError(loginError || 'Login failed. Please try again.');
     }
   };
 

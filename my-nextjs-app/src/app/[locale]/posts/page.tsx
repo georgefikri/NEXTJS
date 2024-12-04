@@ -1,24 +1,18 @@
-import { getPosts } from "@/services/Posts/Posts";
 import { PostsListing} from "@/components/Posts/Posts"
 import { Post } from "@/services/Posts/Posts"
 import { localization } from "@/consts/loadMessage";
+import { fetchPostsService } from "@/services/Posts/postsService";
 
 export default async function PostsPage({params}: {params: {locale: string}}) {
     const messages = localization(params.locale);
-    let allPosts
-    try {
-        allPosts = await getPosts();
+    
+    const {data: allPosts, error} = await fetchPostsService();
 
-        if (allPosts.error) {
-            throw new Error(allPosts.error.message);
-        }
-        
-    } catch {
-        return <div>{messages["errorLoadingPosts"] ?? "An error occurred while loading posts"} </div>;
-
+    if(error) {
+        return <div>{messages["errorLoadingPosts"] ?? "Error loading posts"}</div>;
     }
 
 
 
-    return <PostsListing posts={allPosts.data as Post[]} locale={params.locale}  />;
+    return <PostsListing posts={allPosts as Post[]} locale={params.locale}  />;
 }
