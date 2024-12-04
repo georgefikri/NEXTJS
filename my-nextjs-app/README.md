@@ -18,6 +18,7 @@ This project demonstrates a multilingual setup in Next.js using dynamic routing 
 6. **Reusable Components**: Added a sharedComponents directory for reusable components (src/sharedComponents) such as Button.
 7. **Authentication** : Login/logout functionality with protected routes to secure pages.
 8. **Environment-Based User Management**: Credentials are stored securely in environment variables (.env.local).
+9. **Separation of Concerns**: Organized code into separate directories for better readability and maintainability, logic is separated from the UI.
 
 ## Authentication
 
