@@ -17,7 +17,7 @@ const LoginPage = () => {
     try {
       const isLoggedIn = await authLogin(userName, password);
       if (isLoggedIn) {
-        setUser(userName); // Set the user
+        setUser(userName); // Set the user in context and localStorage
         router.replace('/'); // Redirect to the home page
       }
     } catch {

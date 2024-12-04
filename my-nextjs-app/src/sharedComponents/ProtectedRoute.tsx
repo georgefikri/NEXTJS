@@ -9,27 +9,31 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const { user } = useUserContext();
+  const { user, isInitialized } = useUserContext();
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!user && !pathname.endsWith('/login')) {
+    if (isInitialized && !user && !pathname.endsWith('/login')) {
       const currentLocale = pathname.split('/')[1] || 'en';
       router.replace(`/${currentLocale}/login`);
     }
-  }, [user, router, pathname]);
+  }, [user, isInitialized, router, pathname]);
 
-  // Ensure ProtectedRoute doesn't block the login page rendering
+  // Wait for initialization before rendering or redirecting
+  if (!isInitialized) {
+    return <p>Loading...</p>; // Show a loading message while initializing
+  }
+
   if (!user && pathname.endsWith('/login')) {
-    return <>{children}</>;
+    return <>{children}</>; // Allow the login page to render
   }
 
   if (!user) {
-    return <p>Redirecting...</p>; // Show a loading message during redirection
+    return <p>Redirecting...</p>; // Redirect during authentication check
   }
 
-  return <>{children}</>;
+  return <>{children}</>; // Render the children if user is authenticated
 };
 
 export default ProtectedRoute;
