@@ -15,7 +15,11 @@ This project demonstrates a multilingual setup in Next.js using dynamic routing 
 3. **Localization Implementation**: Locale-based content rendering using JSON files.
 4. **Middleware Issue Fix**: Addressing inconsistencies with Next.js Middleware across versions.
 5. **Tailwind CSS**: Styling components using Tailwind CSS.
-6. **Reusable Components**: Added a sharedComponents directory for reusable components (src/sharedComponents) such as Button.
+6. **Reusable Components**: Added a sharedComponents directory for reusable components (src/sharedComponents).
+6.1 ** Button Component**: A custom Button component for consistent styling across the app.
+6.2 ** Input Component**: A custom Input component for consistent styling across the app.
+6.3 ** Localize Link Component **: A custom LocalizeLink component for locale-based routing.
+6.4 ** ProtectedRoute Component **: A custom ProtectedRoute component for protected routes.
 7. **Authentication** : Login/logout functionality with protected routes to secure pages.
 8. **Environment-Based User Management**: Credentials are stored securely in environment variables (.env.local).
 9. **Separation of Concerns**: Organized code into separate directories for better readability and maintainability, logic is separated from the UI.
