@@ -24,7 +24,7 @@ const Header = ({ locale }: { locale: string }) => {
   };
 
   return (
-    <header className="bg-blue-500 text-white p-4 flex mb-4">
+    <header className="bg-blue-500 text-white p-4 flex ">
       <div className="container mx-auto flex items-center">
         <h1 className={`text-3xl font-bold ${isRTL ? 'ml-auto' : 'mr-auto'}`}>
           {messages['myWebsite'] || 'My Website'}
