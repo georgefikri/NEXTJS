@@ -8,5 +8,8 @@
   "errorLoadingPosts": "Error loading posts.",
   "errorLoadingPost": "Error loading the post details",
   "postNotFound": "Post not found",
-  "backToPosts": "Back to Posts"
+  "backToPosts": "Back to Posts",
+  "postsListing": "Posts Listing",
+  "readMore": "Read More",
+  "seeAllPosts": "See all posts"
 }

@@ -8,5 +8,8 @@
   "errorLoadingPosts": "حدث خطأ أثناء تحميل المقالات.",
   "errorLoadingPost": "خطأ في تحميل تفاصيل المنشور",
   "postNotFound": "المنشور غير موجود",
-  "backToPosts": "العودة إلى المنشورات"
+  "backToPosts": "العودة إلى المنشورات",
+  "postsListing": "قائمة المنشورات",
+  "readMore": "اقرأ المزيد",
+  "seeAllPosts": "عرض جميع المنشورات"
 }
