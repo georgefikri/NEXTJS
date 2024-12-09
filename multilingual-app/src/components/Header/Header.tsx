@@ -24,14 +24,13 @@ const Header = ({ locale }: { locale: string }) => {
   };
 
   return (
-    <header className="bg-blue-500 text-white p-4 flex ">
+    <header className="bg-blue-500 text-white p-4">
       <div className="container mx-auto flex items-center">
         <h1 className={`text-3xl font-bold ${isRTL ? 'ml-auto' : 'mr-auto'}`}>
           {messages['myWebsite'] || 'My Website'}
         </h1>
-        <div
-          className={`flex items-center ${isRTL ? 'order-first' : 'order-last'} gap-4`}
-        >
+
+        <div className={`flex items-center gap-4 ${isRTL ? 'mr-auto' : 'ml-auto'}`}>
           <LanguageSwitcher />
           {user && (
             <button
