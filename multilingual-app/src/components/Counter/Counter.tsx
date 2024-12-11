@@ -1,6 +1,6 @@
 'use client';
-import Button from '@/sharedComponents/Button';
 import { useCount, useCounterActions } from '@/store/hooks/useAppHooks';
+import { Button } from '@georgefikri/design-system';
 
 function Counter() {
   const count = useCount();
