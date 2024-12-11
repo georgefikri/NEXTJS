@@ -45,11 +45,11 @@ This repository contains a reusable design system built with Storybook, Tailwind
 
 - Initialize a new npm project:
 
-`npm init -y`
+  - `npm init -y`
 
 - Install dependencies:
 
-`npm install --save-dev typescript @storybook/react-webpack5 tailwindcss postcss autoprefixer`
+  - `npm install --save-dev typescript @storybook/react-webpack5 tailwindcss postcss autoprefixer`
 
 2. Project Structure
 
@@ -72,7 +72,7 @@ design-system/
 
 - Initialize TypeScript:
 
-`npx tsc --init`
+  - `npx tsc --init`
 
 - Update tsconfig.json:
 
@@ -100,7 +100,7 @@ design-system/
 
 - Run the Storybook CLI:
 
-`npx storybook@latest init`
+  - `npx storybook@latest init`
 
 - If prompted, answer No to manually choosing a project type.
 
@@ -166,7 +166,7 @@ export const Secondary = () => <Button variant="secondary">Secondary Button</But
 
 - Run Storybook:
 
-`npm run storybook`
+  - `npm run storybook`
 
 Open Storybook in the browser (usually http://localhost:6006).
 
@@ -197,23 +197,23 @@ export { default as Button } from './components/Button/Button';
 
 - Compile TypeScript:
 
-`npm run build`
+  - `npm run build`
 
 8. Publish the Design System
 
 - Log in to npm:
 
-`npm login`
+  - `npm login`
 
 - Publish the package:
 
-`npm publish --access public`
+  - `npm publish --access public`
 
 9. Using the Design System
 
 - Install the package in another project:
 
-`npm install @yourname/design-system`
+  - `npm install @yourname/design-system`
 
 - Import the components:
 
