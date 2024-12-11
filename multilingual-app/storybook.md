@@ -40,8 +40,8 @@ This repository contains a reusable design system built with Storybook, Tailwind
 
 - Create a new directory for your design system:
 
-`mkdir design-system 
-cd design-system`
+  - `mkdir design-system`
+  - `cd design-system`
 
 - Initialize a new npm project:
 
