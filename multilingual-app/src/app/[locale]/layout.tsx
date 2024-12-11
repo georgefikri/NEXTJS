@@ -26,7 +26,11 @@ export default function LocaleLayout({
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body>
         <Header locale={locale} />
-        <ProtectedRoute>{children}</ProtectedRoute>
+        <ProtectedRoute>
+          <div className='container mx-auto flex pt-4 flex-col'>
+            {children}
+          </div>
+        </ProtectedRoute>
       </body>
     </html>
   );
