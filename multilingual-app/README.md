@@ -26,7 +26,7 @@ This project demonstrates a multilingual setup in Next.js using dynamic routing 
 8. **Environment-Based User Management**: Credentials are stored securely in environment variables (.env.local).
 9. **Separation of Concerns**: Organized code into separate directories for better readability and maintainability, logic is separated from the UI.
 10. **Storybook** : adding storybook for the reusable components for easier use and clear UI for the options we are having
-    You can find more details about creating a [storybook](storybook.md) section (from scratch)
+    - You can find more details about creating a [storybook](storybook.md) section (from scratch)
 
 ## Authentication
 
